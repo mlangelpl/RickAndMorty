@@ -1,0 +1,46 @@
+<header class="header">
+  <div class="container">
+    <div class="btn-menu">
+      <label for="btn-menu"><img src="/assets/images/rick-sanchez.png" ></label>
+    </div>
+    <div class="logo">
+      <h1>Indice</h1>
+    </div>
+    <nav class="menu">
+      <a href="#">Inicio</a>
+    </nav>
+  </div>
+</header>
+<div class="capa"></div>
+
+<input type="checkbox" id="btn-menu" />
+
+<div class="container-menu">
+    
+
+  <div class="cont-menu">
+    
+    <h5>Especie</h5>
+      <ul class="list-group">
+        <li *ngFor="let especie of especies">
+          <span (click)="seleccion(especie)">{{ especie }}</span>
+        </li>
+      </ul>
+      <h5>Genero</h5>
+      <ul class="list-group">
+        <li *ngFor="let genero of generos">
+          <span (click)="seleccionG(genero)">{{ genero }}</span>
+        </li>
+      </ul>
+      <h5>Estado</h5>
+      <ul class="list-group">
+        <li *ngFor="let statu of status">
+          <span (click)="seleccionS(statu)">{{ statu }}</span>
+        </li>
+      </ul>
+    
+    <label for="btn-menu"><img src="/assets/images/morty-smith.png"></label>
+  </div>
+</div>
+
+<app-personajes [personajes]="this.personajes"></app-personajes>

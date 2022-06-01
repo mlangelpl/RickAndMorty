@@ -1,0 +1,156 @@
+header{
+    position: absolute;
+    top:20px;
+    left: 70px;
+
+}
+.volver{
+    cursor: pointer;
+    color: rgb(18, 118, 151);
+    font-size: 25px;
+    display: flex;
+}
+.span{
+    position: absolute;
+    left: 110px;
+    top: 5px;
+}
+.volver:hover{
+    color: rgb(72, 24, 78);
+    text-decoration: underline;
+}
+picture{
+    position: relative;
+    top: 150px;
+    right: 300px;
+
+}
+img{
+    width: 400px;
+}
+.container{
+    position: relative;
+    top: 200px;
+    left: 100px;
+}
+.clases{
+    display: flex;
+}
+.informacion{
+    margin-right: 40px;
+
+
+}
+li{
+    list-style: none;
+}
+
+.titulo{
+    font-size: 30px;
+    font-weight: bold;
+    color: #0066ff;
+    margin-bottom: 50px;
+}
+.icon{
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 1400px) {
+    picture{
+        position: relative;
+        top: 150px;
+        right: 100px;
+    }
+    
+  }
+  @media screen and (max-width: 1200px) {
+    picture{
+        position: relative;
+        top: 200px;
+        right: 100px;
+    }
+    img{
+        width: 300px;
+    }
+   
+  }
+  @media screen and (max-width: 992px) {
+    picture{
+        display: flex;
+        justify-content: center;
+        top: 80px;
+        left: 50px;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        margin-top: 0px;
+        position: relative;
+        left: 50px;
+        top: 120px;
+
+      
+    }
+    .titulo{
+        position: relative;
+        top: 0px !important;
+        left: 240px !important;
+        width: 100%;
+    }
+    .informacion{
+        position: relative;
+        top: 80px;
+        right: 200px;
+    }
+    h5{
+        font-size: 15px;
+    }
+    .datos{
+        margin-bottom: 13px;
+    }
+    
+    
+   
+  }
+  @media screen and (max-width: 768px) {
+    picture{
+        display: flex;
+        justify-content: center;
+        top: 80px;
+        left: 50px;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        margin-top: 0px;
+        position: relative;
+        left: 50px;
+        top: 120px;
+    }
+    .titulo{
+        position: relative;
+        top: 0px !important;
+        left: 120px !important;
+        width: 100%;
+    }
+    .informacion{
+        position: relative;
+        top: 80px;
+        right: 100px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    picture{
+        display: flex;
+        justify-content: center;
+        top: 50px;
+        left: 40px;
+    }
+    .container{
+        position: relative;
+        top: 100px
+    }
+    .titulo{
+        width: 100%;
+    }
+  }

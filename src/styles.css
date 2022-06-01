@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --bs-body-bg:#F2EBE9;
+}
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+  .cont-menu{
+    z-index: 2;
+    overflow: hidden
+  }
+  .container{
+    z-index: 0;
+  }

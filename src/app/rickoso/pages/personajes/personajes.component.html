@@ -1,0 +1,14 @@
+<div class="container">
+       
+    <div 
+        *ngFor="let personaje of personajes"
+        class="card">
+        <img class="img-fluid" [src]="personaje['image']">
+        <h5>{{personaje['name']}}</h5>
+        <strong>Creación:</strong>
+        <p>{{personaje['created'] | date}}</p>
+        <a [routerLink]="['/personaje',personaje['name']]">Leer mas...</a>
+    </div>
+    
+    
+</div>

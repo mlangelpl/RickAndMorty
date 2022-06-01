@@ -1,0 +1,23 @@
+
+span{
+    color: aliceblue;
+
+}
+
+.lista{
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 30px;
+
+}
+a :hover{
+    transition: color 0.4s;
+    color: rgb(210, 165, 208);
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -1,0 +1,79 @@
+<header>
+    <div routerLink="./personaje" class="volver">
+     <div><b>Regresar</b></div>
+     <div class="span"><span class="material-symbols-outlined">
+        undo
+        </span></div>
+           
+    </div>
+</header>
+
+<picture>
+  <source [srcset]="personaje.image" type="image/svg+xml" />
+  <img
+    [src]="personaje.image"
+    class="img-fluid img-thumbnail rounded float-end"
+    alt="..."
+  />
+</picture>
+
+<div class="container">
+  <div class="titulo">
+    <h1>{{ personaje.name }}</h1>
+  </div>
+  <div class="clases">
+    <div class="informacion">
+        <div class="clases">
+            <div class="icon"><span class="material-symbols-outlined"> face </span></div>
+            <div><h5>Genero:</h5></div>
+          </div>
+      
+          <div class="clases">
+            <div class="icon"><span class="material-symbols-outlined"> android </span></div>
+            <div><h5>Status:</h5></div>
+          </div>
+          <div class="clases">
+            <div class="icon"><span class="material-symbols-outlined"> android </span></div>
+            <div><h5>Especie:</h5></div>
+          </div>
+          <div class="clases">
+            <div class="icon">
+              <span class="material-symbols-outlined"> contact_support </span>
+            </div>
+            <div><h5>Tipo:</h5></div>
+          </div>
+          <div class="clases">
+            <div class="icon"><span class="material-symbols-outlined"> travel_explore </span></div>
+            <div><h5>Origen:</h5></div>
+          </div>
+          <div class="clases">
+            <div class="icon"><span class="material-symbols-outlined"> share_location </span></div>
+            <div><h5>Locación:</h5></div>
+          </div>
+    </div>
+    
+    <div class="informacion">
+      <div class="datos">
+        <h5>{{ personaje.gender || "none" }}</h5>
+      </div>
+      <div class="datos">
+        <h5>{{ personaje.status || "none" }}</h5>
+      </div>
+      <div class="datos">
+        <h5>{{ personaje.species || "none" }}</h5>
+      </div>
+      <div class="datos">
+        <h5>{{ personaje.type || "none" }}</h5>
+      </div>
+      <div class="datos">
+        <h5>{{ personaje.origin.name || "none" }}</h5>
+      </div>
+
+      <div class="datos">
+        <h5>{{ personaje.location.name || "none" }}</h5>
+      </div>
+    </div>
+
+  </div>
+  
+</div>
