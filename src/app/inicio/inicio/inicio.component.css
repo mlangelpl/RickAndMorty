@@ -3,7 +3,7 @@
   }
 
 .fondo-home{
-    background-image: url('../../../assets/images/fondo-home.webp');
+    background-image: url('/assets/images/fondo-home.webp');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -11,7 +11,7 @@
 
 }
 .fondo-2{
-   background-image: url('../../../assets/images/fondo.png');
+   background-image: url('/assets/images/fondo.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
