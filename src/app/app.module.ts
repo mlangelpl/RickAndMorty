@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RickosoModule } from './rickoso/rickoso.module';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { RickosoModule } from './rickoso/rickoso.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RickosoModule
+    HttpClientModule,
+    RickosoModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

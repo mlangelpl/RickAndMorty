@@ -1,79 +1,81 @@
-<header>
-    <div routerLink="./personaje" class="volver">
-     <div><b>Regresar</b></div>
-     <div class="span"><span class="material-symbols-outlined">
-        undo
-        </span></div>
-           
+<div class="capa"></div>
+
+<nav class="navbar1">
+  <button (click)="mostrarNav()" class="navbar-toggler1" type="button">
+    <i class="fa-solid fa-bars-staggered fa-2x"></i>
+  </button>
+  <ul class="navbar-nav1">
+    <li class="nav-item1">
+      <a routerLink="/inicio/home" >Home</a>
+    </li>
+    <li class="nav-item1">
+      <a routerLink="/personaje/listado">Characters </a>
+    </li>
+    <li routerLink="/personaje/episode" class="nav-item1">
+      <a>Episode</a>
+    </li>
+    <li routerLink="/personaje/location" class="nav-item1">
+      <a>Location</a>
+    </li>
+  </ul>
+</nav>
+<div class="contenedor-pricipal">
+  <div class="contenedor">
+    <div class="text">
+      <div class="titulo">
+        <h1>{{ personaje.name }}</h1>
+      </div>
+
+      <div class="clases">
+        <div class="icon">
+          <span class="fa fa-person-half-dress"></span>
+        </div>
+        <div><h5>Gender:</h5></div>
+        <div class="datos">
+          <h5>{{ personaje.gender || "none" }}</h5>
+        </div>
+
+        <div class="icon">
+          <span class="fa fa-skull-crossbones"></span>
+        </div>
+        <div><h5>Status:</h5></div>
+        <div class="datos">
+          <h5>{{ personaje.status || "none" }}</h5>
+        </div>
+
+        <div class="icon">
+          <span class="fa fa-alien"></span>
+        </div>
+        <div><h5>Species:</h5></div>
+        <div class="datos">
+          <h5>{{ personaje.species || "none" }}</h5>
+        </div>
+
+        <div class="icon">
+          <span class="fa fa-cow"></span>
+        </div>
+        <div><h5>Type:</h5></div>
+        <div class="datos">
+          <h5>{{ personaje.type || "none" }}</h5>
+        </div>
+
+        <div class="icon">
+          <span class="fa fa-planet-ringed"></span>
+        </div>
+        <div><h5>Origin:</h5></div>
+        <div class="datos">
+          <h5>{{ personaje.origin.name || "none" }}</h5>
+        </div>
+
+        <div class="icon">
+          <span class="fa fa-satellite"></span>
+        </div>
+        <div><h5>Location:</h5></div>
+        <div class="datos">
+          <h5>{{ personaje.location.name || "none" }}</h5>
+        </div>
+      </div>
     </div>
-</header>
-
-<picture>
-  <source [srcset]="personaje.image" type="image/svg+xml" />
-  <img
-    [src]="personaje.image"
-    class="img-fluid img-thumbnail rounded float-end"
-    alt="..."
-  />
-</picture>
-
-<div class="container">
-  <div class="titulo">
-    <h1>{{ personaje.name }}</h1>
+    <div class="image"><img [src]="personaje.image" /></div>
   </div>
-  <div class="clases">
-    <div class="informacion">
-        <div class="clases">
-            <div class="icon"><span class="material-symbols-outlined"> face </span></div>
-            <div><h5>Genero:</h5></div>
-          </div>
-      
-          <div class="clases">
-            <div class="icon"><span class="material-symbols-outlined"> android </span></div>
-            <div><h5>Status:</h5></div>
-          </div>
-          <div class="clases">
-            <div class="icon"><span class="material-symbols-outlined"> android </span></div>
-            <div><h5>Especie:</h5></div>
-          </div>
-          <div class="clases">
-            <div class="icon">
-              <span class="material-symbols-outlined"> contact_support </span>
-            </div>
-            <div><h5>Tipo:</h5></div>
-          </div>
-          <div class="clases">
-            <div class="icon"><span class="material-symbols-outlined"> travel_explore </span></div>
-            <div><h5>Origen:</h5></div>
-          </div>
-          <div class="clases">
-            <div class="icon"><span class="material-symbols-outlined"> share_location </span></div>
-            <div><h5>Locación:</h5></div>
-          </div>
-    </div>
-    
-    <div class="informacion">
-      <div class="datos">
-        <h5>{{ personaje.gender || "none" }}</h5>
-      </div>
-      <div class="datos">
-        <h5>{{ personaje.status || "none" }}</h5>
-      </div>
-      <div class="datos">
-        <h5>{{ personaje.species || "none" }}</h5>
-      </div>
-      <div class="datos">
-        <h5>{{ personaje.type || "none" }}</h5>
-      </div>
-      <div class="datos">
-        <h5>{{ personaje.origin.name || "none" }}</h5>
-      </div>
-
-      <div class="datos">
-        <h5>{{ personaje.location.name || "none" }}</h5>
-      </div>
-    </div>
-
-  </div>
-  
 </div>

@@ -1,46 +1,139 @@
-<header class="header">
-  <div class="container">
-    <div class="btn-menu">
-      <label for="btn-menu"><img src="/assets/images/rick-sanchez.png" ></label>
-    </div>
-    <div class="logo">
-      <h1>Indice</h1>
-    </div>
-    <nav class="menu">
-      <a href="#">Inicio</a>
-    </nav>
-  </div>
-</header>
 <div class="capa"></div>
 
-<input type="checkbox" id="btn-menu" />
 
-<div class="container-menu">
-    
+<div class="contenedor">
+  
+  <nav class="navbar1">
+    <div class="logo">
+      <img src="../../../../assets/images/Logo.png" alt="">
+    </div>
+    <button (click)="mostrarNav()" class="navbar-toggler1" type="button">
+      <i class="fa-solid fa-bars-staggered fa-2x"></i>
+    </button>
+    <ul class="navbar-nav1">
+      <li class="nav-item1">
+        <a routerLink="/inicio/home" >Home</a>
+      </li>
+      <li class="nav-item1" >
+        <a style="color: #0d6efd; cursor: default; text-decoration: underline;">Characters</a>
+      </li>
+      <li routerLink="/personaje/episode" class="nav-item1">
+        <a>Episode</a>
+      </li>
+      <li routerLink="/personaje/location" class="nav-item1">
+        <a>Location</a>
+      </li>
+    </ul>
+  </nav>
+  <h1>Characters</h1>
 
-  <div class="cont-menu">
-    
-    <h5>Especie</h5>
-      <ul class="list-group">
-        <li *ngFor="let especie of especies">
-          <span (click)="seleccion(especie)">{{ especie }}</span>
+  <div class="input">
+    <input type="text" #box name="name" />
+    <button (click)="buscar(box.value); box.value = ''">Search</button>
+  </div>
+  <div (click)="limpiarFiltro()" class="Filters">
+    <h4>Clear Filters</h4>
+  </div>
+  
+  <div class="buscador">
+    <div class="dropdown">
+      <a
+        class="btn btn-secondary dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Status
+      </a>
+
+      <ul class="dropdown-menu">
+        <li
+          (click)="filtro('status=' + statu + '&')"
+          *ngFor="let statu of status"
+        >
+          <a class="dropdown-item">{{ statu | titlecase }}</a>
         </li>
       </ul>
-      <h5>Genero</h5>
-      <ul class="list-group">
-        <li *ngFor="let genero of generos">
-          <span (click)="seleccionG(genero)">{{ genero }}</span>
+    </div>
+    <div class="dropdown">
+      <a
+        class="btn btn-secondary dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Species
+      </a>
+
+      <ul class="dropdown-menu">
+        <li
+          (click)="filtro('species=' + specie + '&')"
+          *ngFor="let specie of especies"
+        >
+          <a class="dropdown-item">{{ specie | titlecase }}</a>
         </li>
       </ul>
-      <h5>Estado</h5>
-      <ul class="list-group">
-        <li *ngFor="let statu of status">
-          <span (click)="seleccionS(statu)">{{ statu }}</span>
+    </div>
+    <div class="dropdown">
+      <a
+        class="btn btn-secondary dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Gender
+      </a>
+
+      <ul class="dropdown-menu">
+        <li
+          (click)="filtro('gender=' + genero + '&')"
+          *ngFor="let genero of generos"
+        >
+          <a class="dropdown-item">{{ genero | titlecase }}</a>
         </li>
       </ul>
-    
-    <label for="btn-menu"><img src="/assets/images/morty-smith.png"></label>
+    </div>
+  </div>
+
+  <app-personajes [personajes]="this.personajes" [tipo]="this.tipo"></app-personajes>
+
+  <div class="pagination">
+    <ul>
+      <li (click)="element(this.page - 1, this.jota - 1)" class="boton prev">
+        <span><i class="fas fa-angle-left"></i> Prev</span>
+      </li>
+      <li (click)="element(1, 1)" class="numb PM-1"><span>1</span></li>
+      <li *ngIf="this.numeros[0] > 2" class="dots"><span>...</span></li>
+      <li
+        *ngFor="let numero of numeros; let i = index"
+        (click)="element(numero, i + 2)"
+        class="numb PM-{{ i + 2 }}"
+      >
+        <span>{{ numero }}</span>
+      </li>
+      <li
+        *ngIf="this.cantidadPag > 6 && this.numeros[3] < this.cantidadPag - 1"
+        class="dots"
+      >
+        <span>...</span>
+      </li>
+      <li
+        *ngIf="this.cantidadPag > 1"
+        (click)="element(this.cantidadPag, this.numeros.length + 2)"
+        class="numb PM-{{ this.numeros.length + 2 }}"
+      >
+        <span>{{ cantidadPag }}</span>
+      </li>
+      <li
+        *ngIf="this.cantidadPag > 1"
+        (click)="element(this.page + 1, this.jota + 1)"
+        class="boton next"
+      >
+        <span>Next <i class="fas fa-angle-right"></i></span>
+      </li>
+    </ul>
   </div>
 </div>
-
-<app-personajes [personajes]="this.personajes"></app-personajes>

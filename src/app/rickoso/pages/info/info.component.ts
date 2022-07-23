@@ -1,8 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs';
-import { ServiceService } from '../../services/service.service';
-
 
 @Component({
   selector: 'app-info',
@@ -13,23 +9,15 @@ export class InfoComponent implements OnInit {
   personaje : any;
   @Input() personajes: any;
 
-  constructor(private activatedRoute : ActivatedRoute,
-              private service: ServiceService) { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.personaje = JSON.parse(localStorage.getItem('personaje')!);
 
-
-    console.log(this.activatedRoute.params)
-
-    this.activatedRoute.params
-    .pipe(
-      switchMap(({id})=> this.service.getPersonajeName(id))
-      )
-   
-      .subscribe(heroe => this.personaje = heroe);
-
-      console.log(this.personaje);
   }
-
+  mostrarNav() {
+    const navbar = document.querySelector('.navbar-nav1')!;
+    navbar.classList.toggle('mostrar');
+  }
 
 }

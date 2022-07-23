@@ -2,17 +2,20 @@
 :root{
   --bs-body-bg:#F2EBE9;
 }
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
-  .cont-menu{
-    z-index: 2;
-    overflow: hidden
+
+  body{
+    background:url('/assets/images/fondo.png'), url('/assets/images/fondo-home.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
   }
-  .container{
-    z-index: 0;
-  }
+  
+ 

@@ -1,38 +1,35 @@
 import { Injectable } from '@angular/core';
 
-import results from 'src/app/rickoso/data/rickandmorty.json';
+import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { RickAndMorty } from '../../inicio/interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
-  personajes: any = results.results; 
-  constructor() { }
+  private url = environment.apiUrl;
+  
+  constructor(private http: HttpClient) { }
 
- getPersonajeEspecie(termino: string){
-    return this.personajes.filter((personaje: any) => {
-      return personaje.species.includes(termino);
-    }
-    );
-  }
-
-  getPersonajeGenero(termino: string){
-    return this.personajes.filter((personaje: any) => {
-      return personaje.gender.includes(termino)
-    });
-  }
-
-  getPersonajeStatus(termino: string){
-    return this.personajes.filter((personaje: any)=>{
-      return personaje.status.includes(termino)
-    })
-  }
-  getPersonajeName(termino: string){
-    return this.personajes.filter((personaje: any)=>{
-      return personaje.name.includes(termino)
-    })
+  getlocacion(index:string){
+    const baseUrl = `${this.url}/location?page=${index}`;
+    return this.http.get<any>(baseUrl);
   }
   
+  getalgo(termino: string, tipo: string){
+    const baseUrl = `${this.url}/character?page=${termino}&${tipo}`;
+    return this.http.get<RickAndMorty>(baseUrl);
+  }
+
+  getPersonaje(id: string){
+    const baseUrl = `${this.url}/character/${id}`;
+    return this.http.get<any>(baseUrl);
+  }
+
+  getEpisode(index:string){
+    const baseUrl = `${this.url}/episode?page=${index}`;
+    return this.http.get<any>(baseUrl);
+  }
       
 }
-

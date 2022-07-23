@@ -1,20 +1,67 @@
-.view {
-    height: 100vh !important;
+ h1{
+  color: white;
+}
+img{
+  width: 200px;
+}
+.pro{
+  display: grid;
+  background-color: rgb(34, 122, 166);
+  padding: 10px 0 10px 10px;
+  border: 2px solid black;
+  width: calc(200px *5 + 150px);
+  border-radius: 10px;
+  margin: auto;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  
+}
+.ima-pa{    
+  margin: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1185px) {
+  .pro{
+      grid-template-columns: 17% 16% 17% 16% 16% 17%;
+      width: calc(200px *3 + 10px * 2);
+  }
+  .pro div:nth-child(1){
+      grid-column-start: 1;
+      grid-column-end: 3;
+  }
+  .pro div:nth-child(2){
+      grid-column-start: 3;
+      grid-column-end: 5;
+  }
+  .pro div:nth-child(3){
+      grid-column-start: 5;
+      grid-column-end: 7;
+  }
+  .pro div:nth-child(4){
+      grid-column-start: 1;
+      grid-column-end: 4;
+      margin-left: 89px;
+  }
+  .pro div:nth-child(5){
+      grid-column-start: 4;
+      grid-column-end: 7;
+  }
+}
+@media screen and (max-width: 645px) {
+  .pro{
+      grid-template-columns: 100%;
+      width: calc(70% + 20px);
+  }
+  .pro div:nth-child(n){
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin-right: 20px;
+  }
+  .pro div:nth-child(4){
+      margin-left: 10px;
+  }
+  img{
+    width: 100%;
   }
 
-.fondo-home{
-    background-image: url('/assets/images/fondo-home.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-
-
-
-}
-.fondo-2{
-   background-image: url('/assets/images/fondo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-html, body{
-  overflow: hidden
 }

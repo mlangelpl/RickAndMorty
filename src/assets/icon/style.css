@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'IconsFonts';
+  src:
+    url('fonts/IconsFonts.ttf?bv3q7p') format('truetype'),
+    url('fonts/IconsFonts.woff?bv3q7p') format('woff'),
+    url('fonts/IconsFonts.svg?bv3q7p#IconsFonts') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.fa {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'IconsFonts' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-alien:before {
+  content: "\e900";
+}
+.fa-cow:before {
+  content: "\e901";
+}
+.fa-person-half-dress:before {
+  content: "\e902";
+}
+.fa-planet-ringed:before {
+  content: "\e903";
+}
+.fa-satellite:before {
+  content: "\e904";
+}
+.fa-skull-crossbones:before {
+  content: "\e905";
+}

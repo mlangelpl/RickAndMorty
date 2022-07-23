@@ -1,10 +1,20 @@
-<div
-class="view fondo-home">
-  <div class="view fondo-2">
-    <section>
-        <app-titulo></app-titulo>
-        <app-barra></app-barra>
-      
-    </section>
+<div class="fondo-home">
+  <app-titulo></app-titulo>
+  <div class="pro">
+    <div (click)="ir('Rick Sanchez','1')" class="ima-pa">
+      <img [src]="personajes[0]?.image" class="img-fluid img-thumbnail" />
+    </div>
+    <div (click)="ir('Morty Smith','2')" class="ima-pa">
+      <img [src]="personajes[1]?.image" class="img-fluid img-thumbnail" />
+    </div>
+    <div (click)="ir('Summer Smith','3')" class="ima-pa">
+      <img [src]="personajes[2]?.image" class="img-fluid img-thumbnail" />
+    </div>
+    <div (click)="ir('Beth Smith','4')" class="ima-pa">
+      <img [src]="personajes[3]?.image" class="img-fluid img-thumbnail" />
+    </div>
+    <div (click)="ir('Jerry Smith','5')" class="ima-pa">
+      <img [src]="personajes[4]?.image" class="img-fluid img-thumbnail" />
+    </div>
   </div>
 </div>

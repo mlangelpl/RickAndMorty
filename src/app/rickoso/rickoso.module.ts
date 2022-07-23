@@ -6,6 +6,8 @@ import { PersonajesComponent } from './pages/personajes/personajes.component';
 import { IndiceComponent } from './pages/indice/indice.component';
 import { InfoComponent } from './pages/info/info.component';
 import { ListaComponent } from './pages/lista/lista.component';
+import { EpisodeComponent } from './pages/episode/episode.component';
+import { LocationComponent } from './pages/location/location.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { ListaComponent } from './pages/lista/lista.component';
     PersonajesComponent,
      IndiceComponent,
      InfoComponent,
-     ListaComponent
+     ListaComponent,
+     EpisodeComponent,
+     LocationComponent
   ],
 
   imports: [

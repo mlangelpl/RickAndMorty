@@ -1,14 +1,23 @@
-<div class="container">
-       
-    <div 
-        *ngFor="let personaje of personajes"
-        class="card">
-        <img class="img-fluid" [src]="personaje['image']">
-        <h5>{{personaje['name']}}</h5>
-        <strong>Creación:</strong>
-        <p>{{personaje['created'] | date}}</p>
-        <a [routerLink]="['/personaje',personaje['name']]">Leer mas...</a>
+<div class="contenedor">
+  <div (click)="navegar(personaje.name + personaje.id, personaje.id)" *ngFor="let personaje of personajes" class="tarjeta">
+    <div class="imagen">
+
+      <img [src]="personaje['image']" />
     </div>
-    
-    
+    <div class="text">
+      <h5>{{ personaje["name"] }}</h5>
+      <span>Last Location</span>  
+      <p>{{ personaje["location"].name }}</p>
+    </div>
+    <span *ngIf="personaje.status === 'Alive'" class="status live"></span>
+    <span *ngIf="personaje.status === 'unknown'" class="status unknown"></span>
+    <span *ngIf="personaje.status === 'Dead'" class="status dead"></span>
+  </div>
+
+  <div *ngIf="this.personajes.length==0" style="text-align: center;">
+    <h3>
+      No Characters Found :/
+    </h3>
+  </div>
+
 </div>

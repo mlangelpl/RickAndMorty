@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+.capa {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #a7ede8;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+
+  .logo img{
+
+    width: 150px;
+    position: absolute;
+    left: 50px;
+    margin-bottom: 50px;
+  }
+  .contenedor {
+    margin: 15px 50px;
+  }
+  .titulo {
+    text-align: center;
+  }
+  .titulo h1 span{
+    color: #0d6efd;
+  }
+
+  .navbar1 {
+    display: flex;
+    justify-content: right;
+    padding-top: 10px;
+  }
+  .navbar-nav1 {
+    display: flex;
+  }
+  
+  .nav-item1 {
+    list-style-type: none;
+    padding: 10px 20px;
+  }
+  
+  .nav-item1 a {
+    color: rgb(62, 62, 62);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .nav-item1 a:hover {
+    color: #0d6efd;
+    transition: 0.3s;
+  }
+  .navbar-toggler1 {
+    display: none;
+    background: none;
+    border: none;
+    color: rgb(62, 62, 62);
+    cursor: pointer;
+  }
+  
+  .navbar-toggler1:hover,
+  .navbar-toggler1:active {
+    color: #0d6efd;
+    transition: 0.3s;
+  }
+
+
+  .dropdown-menu{
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .dropdown-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  
+.btn{
+  width: 150px !important;
+  font-family: 'Amatic SC';
+  font-size: 1.5rem;
+  background:#09568e;
+  font-weight: 700;
+  position: relative;
+	display: block;
+	overflow: hidden;
+	box-shadow:inset 0 0 0 1px rgba(0,0,0,0.1);
+	transition: all ease 0.5s;
+}
+
+.btn:after,
+.btn:before{
+	width: 80px;
+	height: 200px;
+	content: '';
+	display: block;
+	background: rgba(255,255,255,0.5);
+	transform: rotate(55deg);
+	top: -60px;
+	position: absolute;
+	transition: none;
+	right:-45%;
+	cursor: pointer;
+}
+ 
+.btn:before{
+	left: -78%;
+}
+
+  @media screen and (max-width: 900px) {
+    .navbar-nav1 {
+      flex-direction: column;
+      background-color: #101010;
+      display: none;
+      position: fixed;
+      top: 60px;
+      z-index: 100;
+    }
+    .navbar1{
+      height: 70px;
+    }
+    .nav-item1 a {
+      color: white !important;
+    }
+    .mostrar {
+      display: block;
+    }
+    .navbar-toggler1 {
+      display: block;
+    }
+  }
+
+  
+
+  @media (max-width: 480px) {
+    .contenedor {
+      margin: 15px 10px;
+    }
+  }

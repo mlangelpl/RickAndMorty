@@ -1,49 +1,131 @@
-.container{
-    width: 100%;
-    max-width: 1200px;
-    height: 430px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.contenedor{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
     
 }
+p{
+    margin: 0;
+}
 
-.container .card{
-    width: 200px;
-    height: 350px;
+.tarjeta{
+    display: flex;
     border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
-    text-align: center;
+    background-color: rgb(34, 190, 187);
+    margin: 10px;
     transition: all 0.25s;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);   
+    cursor: pointer; 
+}
+.tarjeta:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.618);
 }
 
-.container .card:hover{
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+.tarjeta span{
+    font-size: 0.8rem;
+
 }
 
-.container .card img{
-    width: 330px;
-    height: 220px;
+.imagen img{
+    width: 150px;
+    height: 100%;
+    border-radius: 8px 0 0 8px;
+}
+.text{
+    margin-left: 15px;
+    margin-top: 5px;
+    width: 55%;
 }
 
 
-.container .card h5{
-    font-weight: 600;
+.status{
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin: 12px;
 }
 
-.container .card p{
-    padding: 0 1rem;
-    font-size: 16px;
-    font-weight: 300;
+.status:before{
+    content: '';
+    position: absolute;
+    left: -5px;;
+    top: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    animation: pulse 1.5s infinite ease-in;
 }
 
-.container .card a {
-    font-weight: 500;
-    text-decoration: none;
-    color: #3498db;
+.status.live{
+    background: #4ef75c;
 }
+.status.live:before{
+    background: #72ff7d;
+}
+
+
+.status.unknown{
+    background: #a8a8a8;
+}
+.status.unknown:before{
+    background: #e2d0d0;
+}
+
+.status.dead{
+    background: #ff4242;
+}
+.status.dead:before{
+    background: #fb7878;
+}
+
+
+
+@keyframes pulse{
+    from{
+        transform: scale(0.5);
+        opacity: 1;
+    }to{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1280px){
+    .contenedor{
+        grid-template-columns: repeat(2, 1fr);        
+    }
+    .tarjeta{
+        max-width: 450px;    
+        width: 95%;    
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+  } 
+  @media (max-width: 884px){
+    .contenedor{
+        grid-template-columns: repeat(1, 1fr);
+    }
+  
+    
+  } 
+
+  @media (max-width: 359px){
+
+    .text h5{
+        font-size: 0.8rem;
+    }
+    .text p{
+        font-size: 0.6rem;
+    }
+    .imagen img{
+        width: 80px;
+    }
+  
+    
+  } 
