@@ -34,6 +34,14 @@
   margin: auto;
 }
 
+.logo img{
+
+  width: 150px;
+  position: absolute;
+  left: 50px;
+  margin-bottom: 50px;
+}
+
 .image img {
   width: 350px;
   border-radius: 10px;
@@ -95,6 +103,9 @@
   }
 
 @media (max-width: 940px) {
+  .contenedor-pricipal{
+    margin-top: 50px;
+  }
   .contenedor {
     margin-top: 0;
     grid-template-columns: 100%;
@@ -122,7 +133,7 @@
     background-color: #101010;
     display: none;
     position: fixed;
-    top: 60px;
+    top: 50px;
     z-index: 100;
     
   }
@@ -134,6 +145,10 @@
   }
   .navbar-toggler1 {
     display: block;
+  }
+  .logo img{
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @media (max-width: 590px) {

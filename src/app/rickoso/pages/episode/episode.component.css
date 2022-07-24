@@ -118,7 +118,7 @@
       background-color: #101010;
       display: none;
       position: fixed;
-      top: 60px;
+      top: 75px;
       z-index: 100;
     }
     .nav-item1 a {
@@ -132,6 +132,10 @@
     }
     .navbar-toggler1 {
       display: block;
+    }
+    .logo img{
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 

@@ -11,7 +11,7 @@
   }
 
   body{
-    background:url('/assets/images/fondo.png'), url('/assets/images/fondo-home.webp');
+    background:url('assets/images/fondo.png'), url('assets/images/fondo-home.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
